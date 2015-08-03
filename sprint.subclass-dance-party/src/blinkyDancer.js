@@ -1,6 +1,6 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps){
   var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
-
+  makeDancer.call(this);
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 
@@ -17,3 +17,6 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps){
 
   return blinkyDancer;
 };
+
+makeBlinkyDancer.prototype = new makeDancer();
+makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
