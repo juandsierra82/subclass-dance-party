@@ -1,12 +1,11 @@
 var PopDancer = function (top, left, timeBetweenSteps){
   BlinkyDancer.call(this);
-
-
-}
-
-PopDancer.prototype = new BlinkyDancer();
-PopDancer.prototype.constructor = BlinkyDancer;
-PopDancer.prototype.step = function (){
-  oldStep();
+  this._timeBetweenSteps = 10000;
+  this.setPosition(top, left)
+  this.step()
 
 }
+
+
+PopDancer.prototype = Object.create(BlinkyDancer.prototype)
+PopDancer.prototype.constructor = PopDancer;
