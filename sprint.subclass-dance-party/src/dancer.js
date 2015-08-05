@@ -37,3 +37,12 @@ var Dancer = function(top, left, timeBetweenSteps){
 
   };
 
+  Dancer.prototype.resetPosition = function (){
+    console.log('reset')
+  var styleSettings = {
+      // top: '0px',
+      left: '0px'
+    };
+    this.$node.css(styleSettings);
+}
+

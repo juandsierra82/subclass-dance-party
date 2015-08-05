@@ -2,7 +2,7 @@ var BlinkyDancer = function(top, left, timeBetweenSteps){
 
 Dancer.call(this, top, left, timeBetweenSteps);
 
-  //var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
+
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 
@@ -24,4 +24,11 @@ BlinkyDancer.prototype.step = function(){
     this.$node.toggle();
 
   };
+  BlinkyDancer.prototype.resetPosition = function (){
+  var styleSettings = {
+      top: '0px',
+      left: '0px'
+    };
+    this.$node.css(styleSettings);
+}
 
